@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "compilerPath": "/usr/local/bin/g++-16",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-gcc-x64",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ]
+        }
+    ],
+    "version": 4
+}

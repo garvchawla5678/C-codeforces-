@@ -1,0 +1,55 @@
+{
+    "tasks": [
+        {
+            "label": "C/C++: g++-16 build and run active file with input/output/error files",
+            "type": "shell",
+            "command": "/bin/zsh",
+            "args": [
+                "-lc",
+                "mkdir -p \"${fileDirname}/build\" && /usr/local/bin/g++-16 -fdiagnostics-color=always -O0 -pipe \"${file}\" -o \"${fileDirname}/build/${fileBasenameNoExtension}\" && \"${fileDirname}/build/${fileBasenameNoExtension}\" < \"${fileDirname}/input.txt\" > \"${fileDirname}/output.txt\" 2> \"${fileDirname}/error.txt\""
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Builds and runs the active file using input.txt, output.txt, and error.txt in the same folder."
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++-16 build active file",
+            "command": "/usr/local/bin/g++-16",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-O0",
+                "-pipe",
+                "${file}",
+                "-o",
+                "${fileDirname}/build/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Builds the active file into a local build folder."
+        }
+    ],
+    "version": "2.0.0"
+}
